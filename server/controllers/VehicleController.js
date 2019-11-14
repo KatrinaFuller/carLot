@@ -52,6 +52,18 @@ export default class VehicleController {
     }
   }
 
+  async edit(req, res, next) {
+    try {
+      let data = await _vehicleService.findOneAndUpdate({ _id: req.params.id, }, req.body, { new: true })
+      if (data) {
+        return res.send(data)
+      }
+      throw new Error("Invalid Id")
+    } catch (error) {
+      next(error)
+    }
+  }
+
 
 
 
