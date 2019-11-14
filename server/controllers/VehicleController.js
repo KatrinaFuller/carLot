@@ -8,9 +8,9 @@ let _vehicleService = new VehicleService().repository
 export default class VehicleController {
   constructor() {
     this.router = express.Router()
-      .use(Authorize.authenticated)
       .get('', this.getAll)
       .get('/:id', this.getById)
+      .use(Authorize.authenticated)
       .post('', this.create)
       .put('/:id', this.edit)
       .delete('/:id', this.delete)
@@ -36,6 +36,16 @@ export default class VehicleController {
       if (!data) {
         throw new Error("Invalid Id")
       }
+      res.send(data)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async create(req, res, next) {
+    req.body.authorId = req.session.uid
+    try {
+      let data = await _vehicleService.create(req.body)
       res.send(data)
     } catch (error) {
       next(error)
