@@ -64,13 +64,12 @@ export default class VehicleController {
     }
   }
 
-
-
-
-
-
-
-
-
-
+  async delete(req, res, next) {
+    try {
+      await _vehicleService.findByIdAndRemove({ _id: req.params.id })
+      res.send("Deleted Vehicle")
+    } catch (error) {
+      next(error)
+    }
+  }
 }
