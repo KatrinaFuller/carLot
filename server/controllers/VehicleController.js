@@ -1,6 +1,6 @@
 import express from 'express'
 import { Authorize } from '../middleware/authorize.js'
-import Axios from "axios";
+// import Axios from "axios";
 import VehicleService from '../services/VehicleService.js';
 
 let _vehicleService = new VehicleService().repository
