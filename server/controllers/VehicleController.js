@@ -30,6 +30,18 @@ export default class VehicleController {
     }
   }
 
+  async getById(req, res, next) {
+    try {
+      let data = await _vehicleService.findById(req.params.id)
+      if (!data) {
+        throw new Error("Invalid Id")
+      }
+      res.send(data)
+    } catch (error) {
+      next(error)
+    }
+  }
+
 
 
 
