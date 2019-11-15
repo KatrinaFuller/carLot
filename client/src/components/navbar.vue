@@ -1,24 +1,26 @@
 <template>
-  <div class="home">
-    <navbar />
+  <div class="navbar">
+    <h1>Car Lot</h1>
   </div>
 </template>
 
 
 <script>
-import navbar from "../components/navbar";
-
 export default {
-  name: "home",
+  name: "navbar",
   data() {
     return {};
   },
   computed: {},
   methods: {},
-  components: { navbar }
+  components: {}
 };
 </script>
 
 
 <style scoped>
+.navbar {
+  background-color: aqua;
+  min-height: 10vh;
+}
 </style>
