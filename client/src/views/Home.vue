@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
+  <div class="home container-fluid">
     <navbar />
     <imageRow />
+    <bodyType />
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 <script>
 import navbar from "../components/navbar";
 import imageRow from "../components/imageRow";
+import bodyType from "../components/bodyType";
 
 export default {
   name: "home",
@@ -17,7 +19,7 @@ export default {
   },
   computed: {},
   methods: {},
-  components: { navbar, imageRow }
+  components: { navbar, imageRow, bodyType }
 };
 </script>
 
