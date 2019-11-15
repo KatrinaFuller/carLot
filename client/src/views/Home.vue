@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <navbar />
+    <imageRow />
   </div>
 </template>
 
 
 <script>
 import navbar from "../components/navbar";
+import imageRow from "../components/imageRow";
 
 export default {
   name: "home",
@@ -15,7 +17,7 @@ export default {
   },
   computed: {},
   methods: {},
-  components: { navbar }
+  components: { navbar, imageRow }
 };
 </script>
 
